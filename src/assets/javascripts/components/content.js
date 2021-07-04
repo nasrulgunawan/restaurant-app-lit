@@ -1,17 +1,18 @@
 import {LitElement, html} from 'lit-element';
-import RESTAURANTS from '../../../data/restaurants.js';
+import {RESTAURANTS} from '../../../data/restaurants';
+import '../components/card';
 
 class ContentComponent extends LitElement {
   static get properties() {
     return {
-      heading: {type: String},
-      tagline: {type: String},
+      title: {type: String},
+      subtitle: {type: String},
     };
   }
   constructor() {
     super();
-    this.heading = 'Temukan Restaurant Favoritmu disini.';
-    this.tagline = 'Pilihan terbaik dengan penawaran menarik.';
+    this.title = 'Daftar Restaurant';
+    this.subtitle = 'Nikmati kebersamaan';
   }
 
   render() {
@@ -19,16 +20,25 @@ class ContentComponent extends LitElement {
       <main id="main-content">
         <div class="container">
           <div class="content-header">
-            <h1>Daftar Restaurant</h1>
-            <p>Nikmati kebersamaan</p>
+            <h1>${this.title}</h1>
+            <p>${this.subtitle}</p>
           </div>
 
-          ${RESTAURANTS.map((restaurant) => {
-            return html`
-              <x-card>
-                <img slot="img" src="${pictureId}" alt="Restaurant ${name}">
-              </x-card>
-            `;
+          ${RESTAURANTS.map(({
+              id, city, name, description, rating, distance, pictureId,
+            }) => {
+              return html`
+                <x-card>
+                  <img slot="img" src="${pictureId}" alt="Restaurant ${name}">
+                  <div slot="text" class="card-text">
+                    <p class="text-small">${city}</p>
+                    <p class="card-title">${name}</p>
+                    <p class="card-description">${description}</p>
+                  </div>
+                  <span slot="rating">${rating}</span>
+                  <span slot="distance" class="text-small">${distance} km</span>
+                </x-card>
+              `;
           })}
         </div>
       </main>

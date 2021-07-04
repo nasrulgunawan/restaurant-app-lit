@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 export const RESTAURANTS = [
   {
     'id': '6c7bqjgi84kcowlqdz',

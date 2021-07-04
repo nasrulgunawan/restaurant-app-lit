@@ -1,7 +1,6 @@
 import 'regenerator-runtime';
 import '../stylesheets/app.css';
-import UI from './ui.js';
-
-UI.setBrandImage();
-UI.setHamburgerMenu();
-UI.renderRestaurantList();
+import '../javascripts/components/navbar';
+import '../javascripts/components/hero';
+import '../javascripts/components/content';
+import '../javascripts/components/footer';

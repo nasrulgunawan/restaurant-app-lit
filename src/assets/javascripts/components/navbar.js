@@ -1,12 +1,13 @@
 
 import {LitElement, html} from 'lit-element';
+import logo from '../../images/logo.svg';
 
 class NavbarComponent extends LitElement {
   render() {
     return html`
       <nav class="navbar">
         <a class="navbar-brand" href="#">
-          <img alt="Mamamyu Logo" width="75%" src="">
+          <img alt="Mamamyu Logo" width="75%" src="${logo}">
         </a>
         <button class="navbar-toggler"
                 type="button"
@@ -26,6 +27,14 @@ class NavbarComponent extends LitElement {
         </div>
       </nav>
     `;
+  }
+
+  clickHandler(e) {
+    document
+      .querySelector('.navbar-collapse')
+      .classList
+      .toggle('open');
+    e.stopPropagation();
   }
 }
 

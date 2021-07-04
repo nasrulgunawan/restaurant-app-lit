@@ -1,4 +1,6 @@
-import {LitElement, html} from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import { sharedStyle } from '../../shared/style';
+import { footerStyle } from './style';
 
 class FooterComponent extends LitElement {
   static get properties() {
@@ -6,6 +8,14 @@ class FooterComponent extends LitElement {
       content: {type: String},
     };
   }
+
+  static get styles() {
+    return [
+      sharedStyle,
+      footerStyle,
+    ];
+  }
+
   constructor() {
     super();
     this.content = 'Copyright © 2021 - Mamamyu';

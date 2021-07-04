@@ -1,5 +1,6 @@
 
-import {LitElement, html} from 'lit-element';
+import { LitElement, html } from 'lit-element';
+import {heroStyle} from './style';
 
 class HeroComponent extends LitElement {
   static get properties() {
@@ -8,6 +9,13 @@ class HeroComponent extends LitElement {
       tagline: {type: String},
     };
   }
+
+  static get styles() {
+    return [
+      heroStyle,
+    ];
+  }
+
   constructor() {
     super();
     this.heading = 'Temukan Restaurant Favoritmu disini.';

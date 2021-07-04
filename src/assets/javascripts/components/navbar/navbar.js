@@ -1,8 +1,15 @@
 
-import {LitElement, html} from 'lit-element';
-import logo from '../../images/logo.svg';
+import { LitElement, html } from 'lit-element';
+import {navbarStyle} from './style';
+import logo from '../../../images/logo.svg';
 
 class NavbarComponent extends LitElement {
+  static get styles() {
+    return [
+      navbarStyle,
+    ];
+  }
+  
   render() {
     return html`
       <nav class="navbar">

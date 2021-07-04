@@ -1,7 +1,14 @@
 
 import {LitElement, html} from 'lit-element';
+import {cardStyle} from './style';
 
 class CardComponent extends LitElement {
+  static get styles() {
+    return [
+      cardStyle,
+    ];
+  }
+
   render() {
     return html`
       <a class="card" href="#">

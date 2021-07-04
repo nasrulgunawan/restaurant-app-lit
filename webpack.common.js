@@ -25,7 +25,7 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
           {
-            loader: 'file-loader'
+            loader: 'file-loader',
           },
         ],
       },
@@ -42,7 +42,7 @@ module.exports = {
           from: path.resolve(__dirname, 'src/assets/'),
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
-            ignore: path.resolve(__dirname, 'src/assets/images/')
+            ignore: path.resolve(__dirname, 'src/assets/images/'),
           },
         },
       ],

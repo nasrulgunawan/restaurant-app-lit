@@ -163,7 +163,6 @@ a.card {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 5;
-  /* number of lines to show */
   -webkit-box-orient: vertical;
 }
 
@@ -253,11 +252,8 @@ a.card {
 @media (max-width: 575.98px) {
   .navbar-collapse {
     display: none;
-    /* This trasform moves the drawer off canvas. */
     -webkit-transform: translate(900px, 0);
     transform: translate(900px, 0);
-
-    /* Optionally, we animate the drawer. */
     transition: all 0.3s ease;
   }
 

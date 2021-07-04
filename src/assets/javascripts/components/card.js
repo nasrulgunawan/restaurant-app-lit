@@ -1,18 +1,12 @@
 
-import data from '../../data.json';
-import logo from '../images/logo.svg';
+import {LitElement, html} from 'lit-element';
 
-class UI {
-  static renderRestaurantList() {
-    const restaurantContainerElement = document.querySelector('.cards');
-    let cardComponent = '';
-
-    data.restaurants.forEach(({
-      id, city, name, description, rating, distance, pictureId,
-    }, index) => {
-      cardComponent += `<a class="card" href="#">
+class CardComponent extends LitElement {
+  render() {
+    return html`
+      <a class="card" href="#">
         <div class="card-img">
-          <img src="${pictureId}" alt="Restaurant ${name}">
+          <slot name="img"></slot>
           <div class="verified-restaurant" title="Verified Restaurant">
             <svg class="icon text-green" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M6.267 3.455a3.066 3.066 0 001.745-.723 3.066 3.066 0 013.976 0 3.066 3.066 0 001.745.723 3.066 3.066 0 012.812 2.812c.051.643.304 1.254.723 1.745a3.066 3.066 0 010 3.976 3.066 3.066 0 00-.723 1.745 3.066 3.066 0 01-2.812 2.812 3.066 3.066 0 00-1.745.723 3.066 3.066 0 01-3.976 0 3.066 3.066 0 00-1.745-.723 3.066 3.066 0 01-2.812-2.812 3.066 3.066 0 00-.723-1.745 3.066 3.066 0 010-3.976 3.066 3.066 0 00.723-1.745 3.066 3.066 0 012.812-2.812zm7.44 5.252a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
           </div>
@@ -31,30 +25,9 @@ class UI {
           </div>
           <span class="text-small">${distance} km</span>
         </div>
-      </a>`;
-    });
-
-    restaurantContainerElement.innerHTML = cardComponent;
-  }
-
-  static setHamburgerMenu() {
-    const menu = document.querySelector('.navbar-toggler');
-    const hero = document.querySelector('.hero');
-    const main = document.querySelector('main');
-    const navbar = document.querySelector('.navbar-collapse');
-
-    menu.addEventListener('click', (event) => {
-      navbar.classList.toggle('open');
-      event.stopPropagation();
-    });
-
-    hero.addEventListener('click', () => navbar.classList.remove('open'));
-    main.addEventListener('click', () => navbar.classList.remove('open'));
-  }
-
-  static setBrandImage() {
-    document.querySelector('.navbar-brand img').src = logo;
+      </a>
+    `;
   }
 }
 
-export default UI;
+customElements.define('x-card', CardComponent);

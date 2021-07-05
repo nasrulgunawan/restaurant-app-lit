@@ -26,7 +26,7 @@ class HeroComponent extends LitElement {
   render() {
     return html`
     <section class="hero">
-      <img src="${heroImage}">
+      <img src="${heroImage}" loading="lazy">
       <div class="hero-container">
         <h1 class="hero-heading">${this.heading}</h1>
         <p class="hero-tagline">${this.tagline}</p>

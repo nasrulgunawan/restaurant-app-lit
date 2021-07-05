@@ -47,5 +47,8 @@ module.exports = {
         },
       ],
     }),
+    new ServiceWorkerWebpackPlugin({
+      entry: path.resolve(__dirname, 'src/assets/javascripts/sw.js'),
+    }),
   ],
 };

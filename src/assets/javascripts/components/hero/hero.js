@@ -1,6 +1,7 @@
 
 import { LitElement, html } from 'lit-element';
 import { heroStyle } from './style';
+import heroImage from './hero.jpg';
 
 class HeroComponent extends LitElement {
   static get properties() {
@@ -25,6 +26,7 @@ class HeroComponent extends LitElement {
   render() {
     return html`
     <section class="hero">
+      <img src="${heroImage}">
       <div class="hero-container">
         <h1 class="hero-heading">${this.heading}</h1>
         <p class="hero-tagline">${this.tagline}</p>

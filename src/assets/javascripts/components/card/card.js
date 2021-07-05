@@ -1,6 +1,6 @@
 
-import {LitElement, html} from 'lit-element';
-import {cardStyle} from './style';
+import { LitElement, html } from 'lit-element';
+import { cardStyle } from './style';
 
 class CardComponent extends LitElement {
   static get styles() {

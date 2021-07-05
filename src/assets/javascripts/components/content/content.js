@@ -1,8 +1,8 @@
 import { LitElement, html } from 'lit-element';
-import {RESTAURANTS} from '../../../../data/restaurants';
+import { RESTAURANTS } from '../../../../data/restaurants';
 import '../card/card';
-import {mainStyle} from './style';
-import {sharedStyle} from '../../shared/style';
+import { mainStyle } from './style';
+import { sharedStyle } from '../../shared/style';
 
 class ContentComponent extends LitElement {
   static get properties() {

@@ -1,6 +1,6 @@
 
 import { LitElement, html } from 'lit-element';
-import {heroStyle} from './style';
+import { heroStyle } from './style';
 
 class HeroComponent extends LitElement {
   static get properties() {

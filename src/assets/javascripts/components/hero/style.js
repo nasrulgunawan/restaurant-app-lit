@@ -1,4 +1,4 @@
-import {css} from 'lit-element';
+import { css } from 'lit-element';
 
 export const heroStyle = css`
   .hero {
@@ -8,7 +8,7 @@ export const heroStyle = css`
     width: 100%;
     text-align: center;
     background: linear-gradient(to right, rgba(0, 0, 0, .4), rgba(250, 148, 42, .65)),
-                var(--primary-color) url("../images/hero.jpg") no-repeat center center fixed;
+                var(--primary-color) url('./hero.jpg') no-repeat center center fixed;
     background-size: cover;
   }
 

@@ -4,6 +4,17 @@ import { navbarStyle } from './style';
 import logo from './logo.svg';
 
 class NavbarComponent extends LitElement {
+  static get properties() {
+    return {
+      isOpen: { type: Boolean },
+    };
+  }
+
+  constructor() {
+    super();
+    this.isOpen = false;
+  }
+
   static get styles() {
     return [
       navbarStyle,
@@ -18,8 +29,9 @@ class NavbarComponent extends LitElement {
         </a>
         <button class="navbar-toggler"
                 type="button"
-                aria-label="Navigation Menu">☰</button>
-        <div class="navbar-collapse">
+                aria-label="Navigation Menu"
+                @click="${this.collapseNavbar}">☰</button>
+        <div class="navbar-collapse ${this.isOpen ? 'open' : null}">
           <ul class="navbar-nav">
             <li class="nav-item active">
               <a href="/">Home</a>
@@ -36,11 +48,8 @@ class NavbarComponent extends LitElement {
     `;
   }
 
-  clickHandler(e) {
-    document
-      .querySelector('.navbar-collapse')
-      .classList
-      .toggle('open');
+  collapseNavbar(e) {
+    this.isOpen = !this.isOpen;
     e.stopPropagation();
   }
 }

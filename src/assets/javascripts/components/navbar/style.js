@@ -51,6 +51,7 @@ export const navbarStyle = css`
     padding: .25rem .5rem !important;
     border: none;
     background-color: #fff;
+    cursor: pointer;
   }
 
   @media (max-width: 575.98px) {

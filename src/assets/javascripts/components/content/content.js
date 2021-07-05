@@ -40,7 +40,7 @@ class ContentComponent extends LitElement {
               }) => {
                 return html`
                   <x-card>
-                    <img slot="img" src="${pictureId}" alt="Restaurant ${name}">
+                    <img slot="img" src="${pictureId}" alt="Restaurant ${name}" loading="lazy">
                     <div slot="text" class="card-text">
                       <p class="text-small">${city}</p>
                       <p class="card-title">${name}</p>

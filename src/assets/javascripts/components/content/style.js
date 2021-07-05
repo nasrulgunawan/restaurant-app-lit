@@ -11,27 +11,11 @@ export const mainStyle = css`
     gap: 1rem;
   }
 
-  x-card {
-    flex: 1 1 300px;
-    flex-direction: column;
-    display: flex;
-    background-color: #fff;
-    border-radius: .5rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, .05);
-    transition: all .5s ease;
-    cursor: pointer;
-  }
-
-  x-card:hover {
-    box-shadow: 8px 28px 50px rgba(39, 44, 49, .07), 1px 6px 12px rgba(39, 44, 49, .04);
-    transition: all .4s ease;
-    transform: translate3D(0, -1px, 0) scale(1.02);
-  }
-
   img {
     width: 100%;
-    height: 100%;
+    height: 200px;
     border-radius: .5rem .5rem 0 0;
+    object-fit: cover;
   }
 
   .card-text {
